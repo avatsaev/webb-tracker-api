@@ -8,6 +8,8 @@
 
 `docker run -p 8001:8001 --name=webb-tracker-api webb-tracker-api`
 
+## Usage
+
 Endpoint: `GET http://localhost:8001/track`
 
 Response example:
