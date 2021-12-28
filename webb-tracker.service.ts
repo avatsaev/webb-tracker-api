@@ -27,12 +27,15 @@ export const scapWebbTrackingData = async () => {
         const currentDeploymentStep = document.querySelector("#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > h1")?.textContent;
         const deploymentDetails = document.querySelector("#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > p.oneLiner")?.textContent;
 
+        const deploymentImgURL = "https://webb.nasa.gov" + document.querySelector("#ssdItemDetailPanelImageWrap > img")?.getAttribute("src");
+
         return {
             distanceEarthKm,
             launchElapsedTime,
             distanceL2Km,
             percentageCompleted,
             speedKmS,
+            deploymentImgURL,
             currentDeploymentStep: currentDeploymentStep?.trim() + " - " + deploymentDetails?.trim(),
         }
     });

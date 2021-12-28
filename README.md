@@ -21,6 +21,7 @@ Response example:
   "distanceL2Km": "1024375.6", // remaining distance to L2
   "percentageCompleted": "29.1741", // distance completed in %
   "speedKmS": "1.1578", // cruising speed in km/s
+  "deploymentImgURL": "", // URL to deployment visual
   "currentDeploymentStep": "MCC1b - Mid Course Correction Burn 1b" // Current deployment step with description
 }
 ```
