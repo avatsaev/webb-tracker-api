@@ -54,6 +54,6 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
             docker stop webb-tracker-api &&
             docker rm webb-tracker-api &&
-            docker pull ${DOCKER_IMAGE} &&
+            docker pull avatsaev/webb-tracker-api &&
             docker run -d --name webb-tracker-api -p 8001:8001 ${DOCKER_IMAGE}
           '
