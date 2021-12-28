@@ -24,5 +24,5 @@ COPY --from=builder /build/package.json /app/
 COPY --from=builder /build/dist/* /app/
 RUN npm install --only=prod
 RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
-EXPOSE 3000
+EXPOSE 8001
 CMD [ "node", "app.js" ]
