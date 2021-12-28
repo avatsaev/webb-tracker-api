@@ -21,7 +21,8 @@ RUN apt install -yyq libappindicator1 libasound2 libatk1.0-0 libc6 libcairo2 lib
 RUN apt-get install -yyq gconf-service lsb-release wget xdg-utils
 
 COPY --from=builder /build/package.json /app/
-COPY --from=builder /build/dist/* /app/
+COPY --from=builder /build/dist/ /app/
+
 RUN npm install --only=prod
 RUN chmod -R o+rwx node_modules/puppeteer/.local-chromium
 EXPOSE 8001
