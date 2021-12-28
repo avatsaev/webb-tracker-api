@@ -2,7 +2,8 @@ import puppeteer  from "puppeteer";
 
 const TRACK_PAGE_URI = process.env.TRACK_PAGE_URI ?? "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
 
-export const scapWebbTrackingData = async () => {
+
+export const initPage = async () => {
     const browser = await puppeteer.launch({headless: true,
         args: [
             "--disable-gpu",
@@ -12,11 +13,14 @@ export const scapWebbTrackingData = async () => {
         ]});
 
     const page = await browser.newPage();
-    
+
     await page.goto(TRACK_PAGE_URI);
-    
-    await page.waitForTimeout(400);
-    
+
+    return page;
+}
+
+export const scrapWebbTrackingData = async (page: puppeteer.Page) => {
+
     const trackingData = await page.evaluate(() => {
         
         const distanceEarthKm = document.querySelector("#kmsEarth")?.textContent;
@@ -39,8 +43,6 @@ export const scapWebbTrackingData = async () => {
             currentDeploymentStep: currentDeploymentStep?.trim() + " - " + deploymentDetails?.trim(),
         }
     });
-
-    page.close();
 
     return trackingData;
 
