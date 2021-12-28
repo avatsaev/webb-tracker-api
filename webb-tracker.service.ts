@@ -1,4 +1,4 @@
-const TRACK_URI = "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
+const TRACK_PAGE_URI = process.env.TRACK_PAGE_URI ?? "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
 import puppeteer  from "puppeteer";
 
 export const scapWebbTrackingData = async () => {
@@ -9,11 +9,13 @@ export const scapWebbTrackingData = async () => {
             "--disable-setuid-sandbox",
             "--no-sandbox",
         ]});
+
     const page = await browser.newPage();
-    await page.goto(TRACK_URI);
-
-
+    
+    await page.goto(TRACK_PAGE_URI);
+    
     await page.waitForTimeout(400);
+    
     const trackingData = await page.evaluate(() => {
         
         const distanceEarthKm = document.querySelector("#kmsEarth")?.textContent;
@@ -21,11 +23,8 @@ export const scapWebbTrackingData = async () => {
         const distanceL2Km = document.querySelector("#kmsToL2")?.textContent;
         const percentageCompleted = document.querySelector("#percentageCompleted")?.textContent;
         const speedKmS = document.querySelector("#speedKm")?.textContent;
-
         const currentDeploymentStep = document.querySelector("#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > h1")?.textContent;
-
         const deploymentDetails = document.querySelector("#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > p.oneLiner")?.textContent;
-
 
         return {
             distanceEarthKm,
@@ -38,7 +37,6 @@ export const scapWebbTrackingData = async () => {
     });
 
     page.close();
-
 
     return trackingData;
 
