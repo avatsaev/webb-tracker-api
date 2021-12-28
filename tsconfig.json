@@ -9,7 +9,4 @@
     },
 
     "lib": ["es6", "es2015", "dom"],
-    "exclude": [
-      "../stream-write-s3-poc/node_modules"
-    ]
   }
