@@ -52,8 +52,8 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-            docker stop webb-tracker-api ||
-            docker rm webb-tracker-api ||
+            docker stop webb-tracker-api &&
+            docker rm webb-tracker-api &&
             docker pull avatsaev/webb-tracker-api &&
             docker run -d --name webb-tracker-api -p 8001:8001 avatsaev/webb-tracker-api
           '
