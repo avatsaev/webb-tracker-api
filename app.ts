@@ -3,7 +3,7 @@ import Fastify from "fastify";
 import { scrapWebbTrackingData } from "./webb-tracker.service";
 import { getBrowser, getWebbPage } from "./helpers/puppetteer";
 
-const version = "1.0.1";
+const version = "1.0.2";
 let page: puppeteer.Page;
 const PORT = process.env.POST ?? 8001;
 
