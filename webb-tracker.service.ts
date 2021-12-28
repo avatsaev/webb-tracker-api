@@ -1,5 +1,6 @@
-const TRACK_PAGE_URI = process.env.TRACK_PAGE_URI ?? "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
 import puppeteer  from "puppeteer";
+
+const TRACK_PAGE_URI = process.env.TRACK_PAGE_URI ?? "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
 
 export const scapWebbTrackingData = async () => {
     const browser = await puppeteer.launch({headless: true,
