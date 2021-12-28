@@ -55,5 +55,5 @@ jobs:
             docker stop webb-tracker-api ||
             docker rm webb-tracker-api ||
             docker pull avatsaev/webb-tracker-api &&
-            docker run -d --name webb-tracker-api -p 8001:8001 ${DOCKER_IMAGE}
+            docker run -d --name webb-tracker-api -p 8001:8001 avatsaev/webb-tracker-api
           '
