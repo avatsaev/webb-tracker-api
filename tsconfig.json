@@ -7,6 +7,5 @@
       "moduleResolution": "node",
       "sourceMap": false,
     },
-
-    "lib": ["es6", "es2015", "dom"],
+    "lib": ["es6", "es2020", "dom"],
   }
