@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
-      "target": "ES2018",
-      "module": "commonjs",
-      "outDir": "dist",
-      "esModuleInterop": true,
-      "moduleResolution": "node",
-      "sourceMap": false,
+        "target": "ES2018",
+        "module": "commonjs",
+        "outDir": "dist",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "sourceMap": false
     },
-    "lib": ["es6", "es2020", "dom"],
-  }
+    "lib": ["es6", "es2015", "dom"]
+}
