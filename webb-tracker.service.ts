@@ -41,6 +41,7 @@ export const scrapWebbTrackingData = async (page: puppeteer.Page) => {
             speedKmS,
             deploymentImgURL,
             currentDeploymentStep: currentDeploymentStep?.trim() + " - " + deploymentDetails?.trim(),
+            timestamp: new Date().toISOString()
         }
     });
 
