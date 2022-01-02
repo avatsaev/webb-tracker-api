@@ -5,6 +5,8 @@
 
 # James Webb Telescope tracking REST API
 
+Public REST API to track JWST's current status
+
 API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 ## API
