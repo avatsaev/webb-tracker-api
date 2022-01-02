@@ -4,13 +4,14 @@
   "description": "JWST Tracking API",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "start": "node dist/app.js",
     "start:dev": "nodemon app.ts"
   },
   "author": "Aslan VATSAEV (@avatsaev)",
   "license": "ISC",
   "devDependencies": {
+    "@tsconfig/recommended": "1.0.1",
     "@types/node": "^16.11.12",
     "eslint": "^8.4.1",
     "eslint-plugin-unused-imports": "^1.1.5",
