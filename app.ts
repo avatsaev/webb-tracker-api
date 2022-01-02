@@ -4,7 +4,7 @@ import { scrapWebbTrackingData } from "./webb-tracker.service";
 import { getBrowser, getWebbPage } from "./helpers/puppetteer";
 import { getInstanceId } from "./dist/helpers/ec2.helpers";
 
-const version = "1.0.2";
+const version = "1.0.3";
 let page: puppeteer.Page;
 const PORT = process.env.POST ?? 8001;
 
