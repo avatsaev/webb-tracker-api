@@ -13,7 +13,10 @@ const fastify = Fastify({
 });
 
 fastify.get("/", async function (request, reply) {
-    const instanceId = await getInstanceId();
+    const instanceId = await getInstanceId().catch(e => {
+        console.log(e);
+        return "";
+    });
     reply.send({ status: "ok", version, serverID: instanceId });
 });
 
