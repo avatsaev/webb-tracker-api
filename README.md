@@ -9,23 +9,11 @@ API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 ## API
 
-- public endpont: https://api.jwst-hub.com
+Public endpont: https://api.jwst-hub.com
 
 
 Ressources:
 
-- `GET /`
-  - returns API status and metatada 
-
-Response example:  https://api.jwst-hub.com/
-
-```json
-{
-  "status": "ok",
-  "version": "1.0.0",
-  "serverID": "d0453deb-9c78-4e3c-be37-cf7c0633d21d" // node ID that handled the request
-}
-```
 
 - `GET: /track`
   - returns jwst tracking data
@@ -49,6 +37,20 @@ Response example:  https://api.jwst-hub.com/track
         "tempCoolSide1C": -88.33, // primary mirror temperature
         "tempCoolSide2C": -182.78 // instrument radiator temperature
     }
+}
+```
+
+
+- `GET /`
+  - returns API status and metatada 
+
+Response example:  https://api.jwst-hub.com/
+
+```json
+{
+  "status": "ok",
+  "version": "1.0.0",
+  "serverID": "d0453deb-9c78-4e3c-be37-cf7c0633d21d" // node ID that handled the request
 }
 ```
 
