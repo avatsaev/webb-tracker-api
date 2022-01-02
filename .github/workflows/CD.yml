@@ -47,11 +47,14 @@ jobs:
           PRIVATE_KEY: ${{ secrets.EC2_KEY  }}
           HOSTNAME : ${{ secrets.EC2_HOST  }}
           USER_NAME : ${{ secrets.EC2_USER  }}
+          SERVER_IPS: ${{ secrets.EC2_SERVER_IPS }}
           DOCKER_IMAGE: avatsaev/webb-tracker-api:latest
 
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          for serverIP in ${SERVER_IPS//,/ }
+          do
+           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${serverIP} '
             docker image prune -f
             docker stop webb-tracker-api &&
             docker rm webb-tracker-api &&
@@ -59,3 +62,5 @@ jobs:
             docker run -d --name webb-tracker-api -p 8001:8001 avatsaev/webb-tracker-api
             docker image prune -f
           '
+          done
+         
