@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 import Fastify from "fastify";
 import { scrapWebbTrackingData } from "./webb-tracker.service";
 import { getBrowser, getWebbPage } from "./helpers/puppetteer";
-import { getInstanceId } from "./dist/helpers/ec2.helpers";
+import { getInstanceId } from "./helpers/ec2.helpers";
 
 const version = "1.0.3";
 let page: puppeteer.Page;
