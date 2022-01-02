@@ -2,22 +2,18 @@ import puppeteer from "puppeteer";
 import Fastify from "fastify";
 import { scrapWebbTrackingData } from "./webb-tracker.service";
 import { getBrowser, getWebbPage } from "./helpers/puppetteer";
-import { getInstanceId } from "./helpers/ec2.helpers";
+import { v4 as uuid } from "uuid";
 
 const version = "1.0.3";
 let page: puppeteer.Page;
 const PORT = process.env.POST ?? 8001;
-
+const processID = uuid();
 const fastify = Fastify({
     logger: true
 });
 
 fastify.get("/", async function (request, reply) {
-    const instanceId = await getInstanceId().catch(e => {
-        console.log(e);
-        return "";
-    });
-    reply.send({ status: "ok", version, serverID: instanceId });
+    reply.send({ status: "ok", version, serverID: processID });
 });
 
 fastify.get("/track", async (request, reply) => {

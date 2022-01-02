@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "fastify": "^3.25.2",
-    "puppeteer": "^13.0.1"
+    "puppeteer": "^13.0.1",
+    "uuid": "^8.3.2"
   }
 }
