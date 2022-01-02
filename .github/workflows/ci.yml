@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+   
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build the application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache NPM
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ hashFiles('package-lock.json') }}
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+  test:
+    name: Run the application tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache NPM
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ hashFiles('package-lock.json') }}
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Test
+        run: npm run test --if-present
+  lint:
+    name: Run the application lint check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Cache NPM
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ hashFiles('package-lock.json') }}
+      - name: Install NodeJS dependencies
+        run: npm ci
+      - name: Test
+        run: npm run lint --if-present
