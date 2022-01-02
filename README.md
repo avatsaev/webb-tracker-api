@@ -25,9 +25,9 @@ Response example:
   "currentDeploymentStep": "MCC1b - Mid Course Correction Burn 1b", // Current deployment step with description
   "tempC": { // dictionary of current temperatures in celcius
     "tempWarmSide1C": "56.67", // sunshield UPS average temperature
-	"tempWarmSide2C": "15.56", // spacecraft equipment panel temperature
-	"tempCoolSide1C": "-88.33", // primary mirror temperature
-	"tempCoolSide2C": "-182.78" // instrument radiator temperature
+    "tempWarmSide2C": "15.56", // spacecraft equipment panel temperature
+    "tempCoolSide1C": "-88.33", // primary mirror temperature
+    "tempCoolSide2C": "-182.78" // instrument radiator temperature
   },
 }
 ```

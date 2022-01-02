@@ -17,10 +17,10 @@ export const scrapWebbTrackingData = async (page: Page) => {
         const deploymentDetails = document.querySelector(
             "#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > p.oneLiner"
         )?.textContent;
-		const tempWarmSide1C = document.querySelector("#tempWarmSide1C")?.textContent;
-		const tempWarmSide2C = document.querySelector("#tempWarmSide2C")?.textContent;
-		const tempCoolSide1C = document.querySelector("#tempCoolSide1C")?.textContent;
-		const tempCoolSide2C = document.querySelector("#tempCoolSide2C")?.textContent;
+        const tempWarmSide1C = document.querySelector("#tempWarmSide1C")?.textContent;
+        const tempWarmSide2C = document.querySelector("#tempWarmSide2C")?.textContent;
+        const tempCoolSide1C = document.querySelector("#tempCoolSide1C")?.textContent;
+        const tempCoolSide2C = document.querySelector("#tempCoolSide2C")?.textContent;
 
         const deploymentImgURL =
             "https://webb.nasa.gov" +
@@ -39,7 +39,7 @@ export const scrapWebbTrackingData = async (page: Page) => {
                 currentDeploymentStep?.trim() +
                 " - " +
                 deploymentDetails?.trim(),
-			tempC: {tempWarmSide1C, tempWarmSide2C, tempCoolSide1C, tempCoolSide2C},
+            tempC: {tempWarmSide1C, tempWarmSide2C, tempCoolSide1C, tempCoolSide2C},
             timestamp: new Date().toISOString()
         };
     });
