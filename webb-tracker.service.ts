@@ -2,18 +2,18 @@ import { Page } from "puppeteer";
 import { toNumber } from "./helpers/to-number";
 
 type TrackingPayload = {
-    distanceEarthKm: number;
+    distanceEarthKm: number | undefined;
     launchElapsedTime: string;
-    distanceL2Km: number;
-    percentageCompleted: number;
-    speedKmS: number;
+    distanceL2Km: number | undefined;
+    percentageCompleted: number | undefined;
+    speedKmS: number | undefined;
     deploymentImgURL: string;
     currentDeploymentStep: string;
     tempC: {
-        tempWarmSide1C: number;
-        tempWarmSide2C: number;
-        tempCoolSide1C: number;
-        tempCoolSide2C: number;
+        tempWarmSide1C: number | undefined;
+        tempWarmSide2C: number | undefined;
+        tempCoolSide1C: number | undefined;
+        tempCoolSide2C: number | undefined;
     };
     timestamp: string;
 };
