@@ -4,7 +4,7 @@ API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 ## API
 
-- public endpont: https://api.jwst-hub/com
+- public endpont: https://api.jwst-hub.com
 
 Ressources:
 
