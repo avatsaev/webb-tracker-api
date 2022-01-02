@@ -1,5 +1,16 @@
 # James Webb Telescope tracking API
 
+API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
+
+## API
+
+- public endpont: https://api.jwst-hub/com
+
+Ressources:
+
+- `GET: track`
+  - returns jwst tracking data
+
 ## Build
 
 `docker build -t webb-tracker-api .`
