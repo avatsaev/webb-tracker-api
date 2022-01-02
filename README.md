@@ -1,4 +1,9 @@
-# James Webb Telescope tracking API
+
+<p align="center">
+  <img src="https://www.jwst.nasa.gov/content/webbLaunch/assets/images/branding/logo/FULLCOLOR_2LINE_LIGHT_BG.png" width="400">
+</p>
+
+# James Webb Telescope tracking REST API
 
 API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
@@ -6,24 +11,27 @@ API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 - public endpont: https://api.jwst-hub.com
 
+
 Ressources:
 
-- `GET: track`
+- `GET /`
+  - returns API status and metatada 
+
+Response example:  https://api.jwst-hub.com/
+
+```json
+{
+  "status": "ok",
+  "version": "1.0.0",
+  "serverID": "d0453deb-9c78-4e3c-be37-cf7c0633d21d" // node ID that handled the request
+}
+```
+
+- `GET: /track`
   - returns jwst tracking data
 
-## Build
+Response example:  https://api.jwst-hub.com/track
 
-`docker build -t webb-tracker-api .`
-
-## Run
-
-`docker run -p 8001:8001 --name=webb-tracker-api webb-tracker-api`
-
-## Usage
-
-Endpoint: `GET http://localhost:8001/track`
-
-Response example:
 
 ```json
 {
@@ -43,3 +51,18 @@ Response example:
     }
 }
 ```
+
+## Build
+
+`docker build -t webb-tracker-api .`
+
+## Run
+
+`docker run -p 8001:8001 --name=webb-tracker-api webb-tracker-api`
+
+## Usage
+
+Endpoint: `GET http://localhost:8001/track`
+
+
+
