@@ -52,7 +52,7 @@ export const scrapWebbTrackingData = async (
         ),
         page.$eval("#ssdItemDetailPanelImageWrap > img", elt =>
             (elt as HTMLImageElement)?.src
-                ? "https://webb.nasa.gov" + (elt as HTMLImageElement)?.src
+                ? (elt as HTMLImageElement)?.src
                 : null
         ),
         page.$eval("#tempWarmSide1C", elt => Number(elt?.textContent) || null),
