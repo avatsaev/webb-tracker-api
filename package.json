@@ -5,8 +5,9 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start": "node dist/main.js",
-    "start:dev": "nodemon main.ts",
+    "start": "node main.js",
+    "start:dev": "node dist/main.js",
+    "start:dev:watch": "nodemon main.ts",
     "lint": "eslint . --ext .ts,.js,",
     "lint:fix": "npm run lint -- --fix"
   },

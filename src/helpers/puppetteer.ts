@@ -3,10 +3,14 @@ import Puppeteer, { Browser, Page } from "puppeteer";
 const DEFAULT_BROWSER_OPTIONS = {
     headless: true,
     args: [
-        "--disable-gpu",
-        "--disable-dev-shm-usage",
-        "--disable-setuid-sandbox",
-        "--no-sandbox"
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--no-first-run',
+      '--no-zygote',
+      '--single-process',
+      '--disable-gpu'
     ]
 };
 
