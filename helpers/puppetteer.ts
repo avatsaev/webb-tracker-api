@@ -14,7 +14,7 @@ export const getBrowser = (): Promise<Browser> =>
     Puppeteer.launch(DEFAULT_BROWSER_OPTIONS);
 
 const DEFAULT_WEBB_PAGE_OPTIONS = {
-    pageUrl: "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html"
+    pageUrl: "https://webb.nasa.gov/content/webbLaunch/whereIsWebb.html?units=metric"
 };
 
 export const getWebbPage = (browser: Browser): Promise<Page> =>
