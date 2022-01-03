@@ -12,21 +12,24 @@ const fastify = Fastify({
     logger: true
 });
 
-fastify.get("/", async function (request, reply) {
-    reply.send({ status: "ok", version, serverID: processID });
-});
+fastify.get("/", {}, () =>
+    Promise.resolve({
+        status: "ok",
+        version,
+        serverID: processID
+    })
+);
 
-fastify.get("/track", async (request, reply) => {
-    const data = await scrapWebbTrackingData(page);
-    reply.send(data);
-});
+fastify.get("/track", () => scrapWebbTrackingData(page));
 
-fastify.listen(PORT, "0.0.0.0", async (err, address) => {
+fastify.listen(PORT, "0.0.0.0", err => {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
     }
-    page = await getBrowser().then(getWebbPage);
+    void getBrowser()
+        .then(getWebbPage)
+        .then(p => (page = p));
     console.log(
         `⚡️[API server]: Server is running at http://localhost:${PORT}`
     );
