@@ -1,8 +1,9 @@
 {
-  "extends": "@tsconfig/recommended/tsconfig.json",
+  "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
       "rootDir": ".",
-      "strict": false
+      "strict": false,
+      "lib": ["DOM"],
   },
   "exclude": [
       "node_modules",
