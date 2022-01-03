@@ -8,7 +8,9 @@
     "start": "node dist/main.js",
     "start:dev": "nodemon main.ts",
     "lint": "eslint . --ext .ts,.js,",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Aslan VATSAEV (@avatsaev)",
   "license": "ISC",
