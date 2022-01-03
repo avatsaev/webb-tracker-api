@@ -12,6 +12,11 @@ describe("JWST API", () => {
         server = await getServer(page);
     });
 
+    afterAll(async () => {
+        await server.close();
+        await page.browser().close();
+    });
+
     describe("/", () => {
         describe("GET /", () => {
             it("should respond with a HTTP 200 status", () =>
