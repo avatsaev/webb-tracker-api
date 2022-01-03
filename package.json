@@ -13,6 +13,10 @@
   },
   "author": "Aslan VATSAEV (@avatsaev)",
   "license": "ISC",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
   "devDependencies": {
     "@tsconfig/node16": "1.0.2",
     "@types/node": "^16.11.12",
