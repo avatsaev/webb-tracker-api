@@ -56,6 +56,10 @@ Response example:  https://api.jwst-hub.com/
 }
 ```
 
+# Telemetry recording and data charting:
+
+https://eu-central-1-1.aws.cloud2.influxdata.com/share/6H2CTV-SQdmreGx3xdUyS
+
 ## Build
 
 `docker build -t webb-tracker-api .`
