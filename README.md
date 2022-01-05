@@ -58,7 +58,10 @@ Response example:  https://api.jwst-hub.com/
 
 # Telemetry recording and data charting:
 
-https://eu-central-1-1.aws.cloud2.influxdata.com/share/6H2CTV-SQdmreGx3xdUyS
+
+Data recorder: https://github.com/avatsaev/webb-data-recorder
+
+Live InfluxDB data: https://eu-central-1-1.aws.cloud2.influxdata.com/share/6H2CTV-SQdmreGx3xdUyS
 
 ![](https://i.imgur.com/EZ9ayux.png)
 
