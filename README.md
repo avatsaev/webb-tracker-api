@@ -60,6 +60,8 @@ Response example:  https://api.jwst-hub.com/
 
 https://eu-central-1-1.aws.cloud2.influxdata.com/share/6H2CTV-SQdmreGx3xdUyS
 
+![](https://i.imgur.com/EZ9ayux.png)
+
 ## Build
 
 `docker build -t webb-tracker-api .`
