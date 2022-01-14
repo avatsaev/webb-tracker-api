@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "fastify": "^3.25.2",
+    "fastify-cors": "^6.0.2",
     "puppeteer": "^13.0.1"
   }
 }
