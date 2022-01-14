@@ -2,24 +2,34 @@
   "name": "webb-tracker-api",
   "version": "1.0.0",
   "description": "JWST Tracking API",
-  "main": "dist/app.js",
+  "main": "dist/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start": "node dist/app.js",
-    "start:dev": "nodemon app.ts",
+    "start": "node main.js",
+    "start:dev": "node dist/main.js",
+    "start:dev:watch": "nodemon main.ts",
     "lint": "eslint . --ext .ts,.js,",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Aslan VATSAEV (@avatsaev)",
   "license": "ISC",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
   "devDependencies": {
     "@tsconfig/node16": "1.0.2",
+    "@types/jest": "27.4.0",
     "@types/node": "^16.11.12",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.8.1",
     "eslint": "8.6.0",
+    "jest": "27.4.5",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
+    "ts-jest": "27.1.2",
     "ts-node": "^10.4.0",
     "typescript": "4.5.4"
   },
