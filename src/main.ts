@@ -7,7 +7,7 @@ function main(): void {
         .then(getServer)
         .then(server => {
             const port = Number(process.env.PORT) || 8001;
-            server.listen(port, err => {
+            server.listen(port, '0.0.0.0', err => {
                 if (err) {
                     server.log.error(err);
                     process.exit(1);
