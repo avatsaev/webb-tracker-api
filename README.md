@@ -47,7 +47,6 @@ Ressources:
 - `GET /`
   - returns API status and metatada 
 
-Response example:  https://api.jwst-hub.com/
 
 ```json
 {
