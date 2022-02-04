@@ -6,6 +6,7 @@ function main(): void {
         .then(getWebbPage)
         .then(getServer)
         .then(server => {
+
             const port = Number(process.env.PORT) || 8001;
             server.listen(port, '0.0.0.0', err => {
                 if (err) {
