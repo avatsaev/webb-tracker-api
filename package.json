@@ -1,11 +1,11 @@
 {
   "name": "webb-tracker-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "JWST Tracking API",
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start": "node main.js",
+    "start": "node dist/main.js",
     "start:dev": "node dist/main.js",
     "start:dev:watch": "nodemon main.ts",
     "lint": "eslint . --ext .ts,.js,",

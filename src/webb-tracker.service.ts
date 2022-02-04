@@ -13,6 +13,11 @@ type TrackingPayload = {
         tempWarmSide2C: number | null;
         tempCoolSide1C: number | null;
         tempCoolSide2C: number | null;
+        tempInstMiriC: number | null;
+        tempInstNirCamC: number | null;
+        tempInstNirSpecC: number | null;
+        tempInstFgsNirissC: number | null;
+        tempInstFsmC: number | null;
     };
     timestamp: string | null;
 };
@@ -21,27 +26,21 @@ export const scrapWebbTrackingData = async (
     page: Page
 ): Promise<TrackingPayload> => {
     const [
-        distanceEarthKm,
-        launchElapsedTime,
-        distanceL2Km,
-        percentageCompleted,
-        speedKmS,
         currentDeploymentStep,
         deploymentDetails,
         deploymentImgURL,
         tempWarmSide1C,
         tempWarmSide2C,
         tempCoolSide1C,
-        tempCoolSide2C
+        tempCoolSide2C,
+        tempInstMiriC,
+        tempInstNirCamC,
+        tempInstNirSpecC,
+        tempInstFgsNirissC,
+        tempInstFsmC,
+
     ] = await Promise.all([
-        page.$eval("#kmsEarth", elt => Number(elt?.textContent) || null),
-        page.$eval("#launchElapsedTime", elt => elt?.textContent || null),
-        page.$eval("#kmsToL2", elt => Number(elt?.textContent) || null),
-        page.$eval(
-            "#percentageCompleted",
-            elt => Number(elt?.textContent) || null
-        ),
-        page.$eval("#speedKm", elt => Number(elt?.textContent) || null),
+
         page.$eval(
             "#hero1 > div.ssdItemDetailPanel > div.ssdItemDetailPanelContent > header > h1",
             elt => elt?.textContent || null
@@ -58,15 +57,21 @@ export const scrapWebbTrackingData = async (
         page.$eval("#tempWarmSide1C", elt => Number(elt?.textContent) || null),
         page.$eval("#tempWarmSide2C", elt => Number(elt?.textContent) || null),
         page.$eval("#tempCoolSide1C", elt => Number(elt?.textContent) || null),
-        page.$eval("#tempCoolSide2C", elt => Number(elt?.textContent) || null)
+        page.$eval("#tempCoolSide2C", elt => Number(elt?.textContent) || null),
+
+        page.$eval("#tempInstMiriC", elt => Number(elt?.textContent) || null),
+        page.$eval("#tempInstNirCamC", elt => Number(elt?.textContent) || null),
+        page.$eval("#tempInstNirSpecC", elt => Number(elt?.textContent) || null),
+        page.$eval("#tempInstFgsNirissC", elt => Number(elt?.textContent) || null),
+        page.$eval("#tempInstFsmC", elt => Number(elt?.textContent) || null),
     ]);
 
     return {
-        distanceEarthKm,
-        launchElapsedTime,
-        distanceL2Km,
-        percentageCompleted,
-        speedKmS,
+        distanceEarthKm: null,
+        launchElapsedTime: null,
+        distanceL2Km: null,
+        percentageCompleted: null,
+        speedKmS: null,
         deploymentImgURL,
         currentDeploymentStep:
             currentDeploymentStep?.trim() + " - " + deploymentDetails?.trim(),
@@ -74,7 +79,12 @@ export const scrapWebbTrackingData = async (
             tempWarmSide1C,
             tempWarmSide2C,
             tempCoolSide1C,
-            tempCoolSide2C
+            tempCoolSide2C,
+            tempInstMiriC,
+            tempInstNirCamC,
+            tempInstNirSpecC,
+            tempInstFgsNirissC,
+            tempInstFsmC,
         },
         timestamp: new Date().toISOString()
     };
