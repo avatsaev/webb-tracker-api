@@ -40,27 +40,27 @@ describe("JWST API", () => {
             it('should respond with a valid "distanceEarthKm" value', () =>
                 expect(response.json()).toHaveProperty(
                     "distanceEarthKm",
-                    expect.any(Number)
+                  null
                 ));
             it('should respond with a valid "launchElapsedTime" value', () =>
                 expect(response.json()).toHaveProperty(
                     "launchElapsedTime",
-                    expect.any(String)
+                  null
                 ));
             it('should respond with a valid "distanceL2Km" value', () =>
                 expect(response.json()).toHaveProperty(
                     "distanceL2Km",
-                    expect.any(Number)
+                  null
                 ));
             it('should respond with a valid "percentageCompleted" value', () =>
                 expect(response.json()).toHaveProperty(
                     "percentageCompleted",
-                    expect.any(Number)
+                  null
                 ));
             it('should respond with a valid "speedKmS" value', () =>
                 expect(response.json()).toHaveProperty(
                     "speedKmS",
-                    expect.any(Number)
+                    null
                 ));
             it('should respond with a valid "deploymentImgURL" value', () =>
                 expect(response.json()).toHaveProperty(
@@ -92,6 +92,31 @@ describe("JWST API", () => {
                     "tempC.tempCoolSide2C",
                     expect.any(Number)
                 ));
+            it('should respond with a valid "tempC.tempCoolSide2C" value', () =>
+              expect(response.json()).toHaveProperty(
+                "tempC.tempInstMiriC",
+                expect.any(Number)
+              ));
+            it('should respond with a valid "tempC.tempCoolSide2C" value', () =>
+              expect(response.json()).toHaveProperty(
+                "tempC.tempInstNirCamC",
+                expect.any(Number)
+              ));
+            it('should respond with a valid "tempC.tempCoolSide2C" value', () =>
+              expect(response.json()).toHaveProperty(
+                "tempC.tempInstNirSpecC",
+                expect.any(Number)
+              ));
+            it('should respond with a valid "tempC.tempCoolSide2C" value', () =>
+              expect(response.json()).toHaveProperty(
+                "tempC.tempInstFgsNirissC",
+                expect.any(Number)
+              ));
+            it('should respond with a valid "tempC.tempCoolSide2C" value', () =>
+              expect(response.json()).toHaveProperty(
+                "tempC.tempInstFsmC",
+                expect.any(Number)
+              ));
             it('should respond with a valid "timestamp" value', () =>
                 expect(response.json()).toHaveProperty(
                     "timestamp",
