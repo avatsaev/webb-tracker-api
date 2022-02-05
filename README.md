@@ -11,13 +11,14 @@ API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 ## API
 
-~~Public endpont: https://api.jwst-hub.com~~
+Public endpont: https://api.jwst-hub.com
 
 JWST has fully deployed, the public API is shutdown, you can still self host it if you wish so.
 
 
 Ressources:
 
+**Endpoint: https://api.jwst-hub.com/track**
 
 - `GET: /track`
   - returns jwst tracking data
@@ -26,23 +27,30 @@ Ressources:
 
 ```json
 {
-    "distanceEarthKm": 421956.0, // distance traveled from earth
-    "launchElapsedTime": "02:12:51:53", // time elapsed since launch
-    "distanceL2Km": 1024375.6, // remaining distance to L2
-    "percentageCompleted": 29.1741, // distance completed in %
-    "speedKmS": 1.1578, // cruising speed in km/s
-    "deploymentImgURL": "", // URL to deployment visual
-    "currentDeploymentStep": "MCC1b - Mid Course Correction Burn 1b", // Current deployment step with description
-    "tempC": {
-        // dictionary of current temperatures in celcius
-        "tempWarmSide1C": 56.67, // sunshield UPS average temperature
-        "tempWarmSide2C": 15.56, // spacecraft equipment panel temperature
-        "tempCoolSide1C": -88.33, // primary mirror temperature
-        "tempCoolSide2C": -182.78 // instrument radiator temperature
-    }
+  distanceEarthKm: null, // no longer available
+  launchElapsedTime: null, // no longer available
+  distanceL2Km: null, // no longer available
+  percentageCompleted: null, // no longer available
+  speedKmS: null, // no longer available
+  deploymentImgURL: "https://webb.nasa.gov/content/webbLaunch/assets/images/deployment/1000pxWide/127.png",
+  currentDeploymentStep: "WEBB IS ORBITING L2 - Next Steps:  Cooldown, Alignment, Calibration",
+  tempC: {
+    tempWarmSide1C: 51,
+    tempWarmSide2C: 12,
+    tempCoolSide1C: -217,
+    tempCoolSide2C: -213,
+    tempInstMiriC: -128,
+    tempInstNirCamC: -180,
+    tempInstNirSpecC: -168,
+    tempInstFgsNirissC: -168,
+    tempInstFsmC: -216
+  },
+  timestamp: "2022-02-05T15:50:13.536Z"
 }
 ```
 
+
+**Endpoint: https://api.jwst-hub.com**
 
 - `GET /`
   - returns API status and metatada 
