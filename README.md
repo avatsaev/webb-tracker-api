@@ -11,7 +11,9 @@ API data source: https://www.jwst.nasa.gov/content/webbLaunch/whereIsWebb.html
 
 ## API
 
-Public endpont: https://api.jwst-hub.com
+~~Public endpont: https://api.jwst-hub.com~~
+
+JWST has fully deployed, the public API is shutdown, you can still self host it if you wish so.
 
 
 Ressources:
@@ -20,7 +22,6 @@ Ressources:
 - `GET: /track`
   - returns jwst tracking data
 
-Response example:  https://api.jwst-hub.com/track
 
 
 ```json
@@ -46,7 +47,6 @@ Response example:  https://api.jwst-hub.com/track
 - `GET /`
   - returns API status and metatada 
 
-Response example:  https://api.jwst-hub.com/
 
 ```json
 {
