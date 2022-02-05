@@ -12,11 +12,6 @@ export async function getServer(page: Page): Promise<FastifyInstance> {
     });
 
 
-    setInterval( () => {
-        console.log("reloading page...");
-        page.reload({waitUntil: "domcontentloaded"}).catch(console.error);
-    }, 60000*30);
-
     await instance.register(FastifyCors, {
       origin: "*",
       methods: ["GET"],
@@ -25,10 +20,11 @@ export async function getServer(page: Page): Promise<FastifyInstance> {
     instance.get("/", {}, () =>
         Promise.resolve({
             status: "ok",
-            version: "2.0.0",
+            version: "2.0.1",
             serverID: instanceID
         })
     );
+
 
     instance.get("/track", (req) => {
       console.log("TRACK", req.ip);

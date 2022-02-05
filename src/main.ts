@@ -18,6 +18,7 @@ function main(): void {
                 );
             });
         });
+    //
 }
 
 main();
