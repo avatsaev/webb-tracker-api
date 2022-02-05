@@ -27,11 +27,11 @@ Ressources:
 
 ```json
 {
-  "distanceEarthKm":null,
-  "launchElapsedTime":null,
-  "distanceL2Km":null,
-  "percentageCompleted":null,
-  "speedKmS":null,
+  "distanceEarthKm":null,  // no longer available
+  "launchElapsedTime":null, // no longer available
+  "distanceL2Km":null, // no longer available
+  "percentageCompleted":null, // no longer available
+  "speedKmS":null, // no longer available
   "deploymentImgURL":"https://webb.nasa.gov/content/webbLaunch/assets/images/deployment/1000pxWide/127.png",
   "currentDeploymentStep":"WEBB IS ORBITING L2 - Next Steps:  Cooldown, Alignment, Calibration",
   "tempC":{
